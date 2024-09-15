@@ -1,7 +1,9 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const sendVerificationEmail = async (email, otp) => {
   const transporter = nodemailer.createTransport({
+    secure: true,
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     auth: {
@@ -28,6 +30,7 @@ const sendVerificationEmail = async (email, otp) => {
 
 const sendResetPasswordEmail = async (email, resetLink) => {
   const transporter = nodemailer.createTransport({
+    secure: true,
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     auth: {
