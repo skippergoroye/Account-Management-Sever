@@ -25,6 +25,11 @@ app.use(cors({
 }));
 
 
+app.get('/', (req, res) => {
+  res.send('API is running....');
+});
+
+
 
 mongoose.set("strictQuery", true);
 
